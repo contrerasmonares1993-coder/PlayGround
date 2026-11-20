@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1a100d">
+  <title>Polvo y Plomo — Duelo en la frontera</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="game-shell" id="gameShell">
+    <canvas id="scene" aria-label="Escena de un duelo en el oeste"></canvas>
+    <div class="film-grain" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Polvo y Plomo, inicio"><span class="brand-mark">✦</span><span>POLVO <i>&</i> PLOMO</span></a>
+      <div class="top-meta"><span class="chapter">FRONTERA · 1898</span><button class="sound-button" id="soundButton" aria-label="Activar o desactivar sonido">♫ <span>SONIDO</span></button></div>
+    </header>
+
+    <section class="hud" id="hud" aria-live="polite" hidden>
+      <div class="round-label"><span class="eyebrow">DUEL0</span><strong id="roundNumber">01</strong><span class="round-line"></span><span class="round-name" id="roundName">CALLE POLVORIENTA</span></div>
+      <div class="opponent-card"><span class="opponent-label">TU CONTRINCANTE</span><strong id="opponentName">EL FORASTERO</strong><div class="opponent-rank" id="opponentRank">◆ ◆ ◇</div></div>
+      <div class="score-card"><span class="opponent-label">VICTORIAS</span><strong id="scoreValue">00</strong></div>
+    </section>
+
+    <div class="duel-prompt" id="duelPrompt" hidden>
+      <span class="prompt-kicker" id="promptKicker">MANTÉN LA CALMA</span>
+      <strong id="promptText">NO TE ADELANTES</strong>
+      <span class="prompt-sub" id="promptSub">Espera la señal...</span>
+    </div>
+
+    <section class="screen intro-screen" id="introScreen">
+      <div class="intro-copy">
+        <p class="eyebrow"><span class="eyebrow-rule"></span> UNA HISTORIA DEL VIEJO OESTE</p>
+        <h1>POLVO<br><em>Y PLOMO</em></h1>
+        <p class="intro-desc">Seis pueblos. Seis pistoleros.<br>Solo una mano más rápida que la tuya.</p>
+        <button class="action-button" id="startButton"><span>ACEPTAR EL DESAFÍO</span><b>→</b></button>
+        <p class="controls-note"><span>⌁</span> ESPERA A «¡DESENFUNDA!» Y DISPARA <kbd>ESPACIO</kbd></p>
+      </div>
+      <div class="intro-stamp" aria-hidden="true"><span>LA FRONTERA</span><strong>NO<br>PERDONA</strong><b>★ &nbsp; 1898 &nbsp; ★</b></div>
+      <div class="bottom-caption"><span>UNA PRUEBA DE NERVIOS Y REFLEJOS</span><span>01 — 06</span></div>
+    </section>
+
+    <section class="screen result-screen" id="resultScreen" hidden>
+      <div class="result-card"><p class="eyebrow" id="resultEyebrow">EL POLVO SE ASIENTA</p><h2 id="resultTitle">¡VICTORIA!</h2><p id="resultMessage">Tu mano habló primero.</p><div class="result-stats"><span>TIEMPO DE REACCIÓN</span><strong id="reactionValue">0.00 s</strong></div><button class="action-button" id="continueButton"><span>SIGUIENTE DUELO</span><b>→</b></button></div>
+    </section>
+
+    <section class="screen ending-screen" id="endingScreen" hidden>
+      <div class="ending-card"><p class="eyebrow">LA LEYENDA HA NACIDO</p><h2>EL MÁS<br><em>RÁPIDO</em></h2><p>Seis duelos. Una leyenda.<br>La frontera nunca olvidará tu nombre.</p><div class="final-score"><span>TIEMPO MEDIO</span><strong id="averageValue">0.00 s</strong></div><button class="action-button" id="againButton"><span>VOLVER A EMPEZAR</span><b>↻</b></button></div>
+    </section>
+
+    <footer class="bottom-ui"><div class="duel-progress" id="duelProgress" aria-label="Progreso de duelos"></div><div class="bottom-hint" id="bottomHint">AFINA EL OÍDO <span>·</span> NO TE ADELANTES</div><div class="mobile-controls"><button id="drawButton" class="draw-button" aria-label="Disparar">¡DISPARA!</button></div><span class="edition">EDICIÓN DEL ATARDECER <b>✦</b></span></footer>
+    <div class="flash" id="flash"></div>
+    <div class="toast" id="toast" role="status"></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
